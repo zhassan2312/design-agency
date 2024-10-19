@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="./logo3.webp" sizes="any" />
+        <link rel="icon" href="/logo3.webp" sizes="any" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
