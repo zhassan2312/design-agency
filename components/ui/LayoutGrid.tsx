@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./MovingBorders";
 
@@ -50,7 +49,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               layout
             >
               {selected?.id === card.id && <SelectedCard selected={selected} />}
-              <BlurImage card={card} />
+              <Blurimg card={card} />
             </motion.div>
           </div>
         </Button>
@@ -67,10 +66,10 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   );
 };
 
-const BlurImage = ({ card }: { card: Card }) => {
+const Blurimg = ({ card }: { card: Card }) => {
   const [loaded, setLoaded] = useState(false);
   return (
-    <Image
+    <img
       src={card.thumbnail}
       height="100"
       width="100"
